@@ -6,6 +6,18 @@
 
 ## Setup
 
-```
-make install
+```javascript
+import app from '../app';
+import matchers from 'jest-supertest-matchers';
+import request from 'supertest';
+
+// inside tests
+beforeAll(() => {
+  jasmine.addMatchers(matchers);
+});
+
+it('example', async () => {
+  const res = request(app).get('/');
+  expect(res).toHaveHTTPStatus(200);
+});
 ```
