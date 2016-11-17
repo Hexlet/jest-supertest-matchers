@@ -17,7 +17,7 @@ beforeAll(() => {
 });
 
 it('example', async () => {
-  const res = request(app).get('/');
+  const res = await request(app).get('/');
   expect(res).toHaveHTTPStatus(200);
 });
 ```
