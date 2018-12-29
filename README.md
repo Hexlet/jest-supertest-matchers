@@ -13,7 +13,7 @@ import request from 'supertest';
 
 // inside tests
 beforeAll(() => {
-  jasmine.addMatchers(matchers);
+  expect.extend(matchers);
 });
 
 it('example', async () => {
