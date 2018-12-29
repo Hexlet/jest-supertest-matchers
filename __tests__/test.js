@@ -5,7 +5,7 @@ import matchers from '../src/index';
 
 describe('matchers', () => {
   beforeAll(() => {
-    jasmine.addMatchers(matchers);
+    expect.extend(matchers);
   });
 
   it('toHaveHTTPStatus', () => {
