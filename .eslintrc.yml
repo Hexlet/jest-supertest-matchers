@@ -2,16 +2,19 @@
 
 plugins:
   - jest
-  - flowtype
-  - babel
-
 env:
+  es2020: true
   node: true
   jest: true
-
-parser: babel-eslint
-
 extends:
-  - 'airbnb-base'
-  - 'plugin:jest/recommended'
-  - 'plugin:flowtype/recommended'
+  - airbnb-base
+  - plugin:jest/recommended
+parserOptions:
+  ecmaVersion: 2020
+  sourceType: module
+rules:
+  no-console: off
+  import/extensions: off
+  import/prefer-default-export: off
+  jest/no-try-expect: off
+  jest/no-conditional-expect: off

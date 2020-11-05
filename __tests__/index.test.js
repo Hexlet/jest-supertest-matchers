@@ -1,7 +1,5 @@
-// @flow
-
-import { htmlToText } from '../src/utils';
-import matchers from '../src/index';
+import { htmlToText } from '../src/utils.js';
+import matchers from '../index.js';
 
 describe('matchers', () => {
   beforeAll(() => {
@@ -14,10 +12,11 @@ describe('matchers', () => {
 
   it('toHaveHTTPStatus (error)', () => {
     const text = 'one<br> two <br> three';
+    const html = htmlToText(text);
     try {
       expect({ status: 200, text }).toHaveHTTPStatus(300);
     } catch (e) {
-      expect(e.message.split('---\n\n')[1]).toBe(htmlToText(text));
+      expect(e.message.includes(html)).toBe(true);
     }
   });
 
@@ -27,10 +26,11 @@ describe('matchers', () => {
 
   it('not.toHaveHTTPStatus (error)', () => {
     const text = 'one<br> two <br> three';
+    const html = htmlToText(text);
     try {
       expect({ status: 200, text }).not.toHaveHTTPStatus(200);
     } catch (e) {
-      expect(e.message.split('---\n\n')[1]).toBe(htmlToText(text));
+      expect(e.message.includes(html)).toBe(true);
     }
   });
 });
