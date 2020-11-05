@@ -1,14 +1,10 @@
 install: install-deps install-flow-typed
 
 install-deps:
-	yarn
+	npm ci
 
 install-flow-typed:
 	npm run flow-typed install
-
-build:
-	rm -rf dist
-	npm run build
 
 test:
 	npm test
