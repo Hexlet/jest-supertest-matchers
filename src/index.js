@@ -1,3 +1,5 @@
+// @ts-check
+
 import {
   matcherHint,
   printReceived,
@@ -6,6 +8,12 @@ import {
 
 import { htmlToText } from './utils.js';
 
+/**
+ * Matches that http response has status code
+ * @example
+ * expect({ status: 200 }).toHaveHTTPStatus(200); //true
+ * expect({ status: 200 }).toHaveHTTPStatus(301); //false
+ */
 export default {
   toHaveHTTPStatus(actual, expected) {
     const pass = (actual.status === expected);
