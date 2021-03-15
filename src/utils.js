@@ -3,7 +3,7 @@
 /**
  * Convert html to text
  * @example
- * htmlToText('one<br> two <br> three')
+ * htmlToText('one<br> two <br> three');
  * // one
  * // two
  * // three
