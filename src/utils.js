@@ -3,8 +3,7 @@
 /**
  * Convert html to text
  * @example
- * const html = 'one<br> two <br> three';
- * htmlToText(html)
+ * htmlToText('one<br> two <br> three')
  * // one
  * // two
  * // three
